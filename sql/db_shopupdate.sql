@@ -1,7 +1,7 @@
-#THIS SQL IS OPTIONAL, TO BE USED AFTER 'db_drops.sql'
+﻿#THIS SQL IS OPTIONAL, TO BE USED AFTER 'db_drops.sql'
 #THIS REQUIRES PROVIDED WZ FILES
 
-USE `heavenms`;
+USE `UmbraMS`;
 
 # Scroll shop at Spindle, chair shop at Kino Konoko, potion shop at T-1337
 INSERT INTO `shops` (`shopid`,`npcid`) VALUES
