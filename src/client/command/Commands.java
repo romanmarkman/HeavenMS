@@ -104,6 +104,7 @@ import java.util.ArrayList;
 import server.life.SpawnPoint;
 import server.maps.FieldLimit;
 
+//NewStuffffffffffffffffff
 public class Commands {
         private static HashMap<String, Integer> gotomaps = new HashMap<String, Integer>();
 
