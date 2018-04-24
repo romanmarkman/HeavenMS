@@ -1,0 +1,165 @@
+Commands Breakdown:
+-------------------
+
+
+Level 0 Commands (Player):
+- help/commands/playercommands: Display list of commands (Open NPC 9201143)
+- droplimit: Undefined (Potentially limits the drops on the map)
+- time: Display Server Time
+- credits/staff: Display the list of staff(Open NPC 2010007)
+- lastrestart/uptime: Display the amount of time the server has been online
+- gacha: Recieves an item from a gachapon corresponding to the selected city
+- whatdropsfrom: Display to the player the items that are dropped by a specific monsted
+- whodrops: Display the monsters that drop a specific item
+- dispose: Dispose the state of the character
+- equiplv: Display all the equipments to the player
+- showrates: Display rates to the player
+- rates: Undefined (Something to do with rates)
+- online: Display the users that are currently online
+- gm: Send a message to a GM in the game
+- bug: Report a bug in the game to a GM that is online
+- joinevent: Player joins a currently running event (Warps to the event map)
+- leaveevent: Leave the event (Warps out of the event map)
+- bosshp: Display boss HP in the chatlog
+- mobhp: Display monster HP in the chatlog
+- ranks: Display player ranks (Set a limit on the data intake due to access to database)
+/* - points: (Would have to test it out)*/
+
+
+Level 1 Commands (Donator):
+- buffme
+- goto
+- recharge
+- whereami
+
+
+Level 2 Commands (Junior Game Master):
+- hide
+- unhide
+- sp
+- ap
+- empowerme
+- buff
+- buffmap
+- bomb
+- dc
+- cleardrops
+- clearslot
+- warp
+- warpto
+- warphere/summon
+- reach
+- gmshop
+- heal
+- item/drop
+- level
+- levelpro
+- setstat
+- maxstat
+- maxskill
+- resetskill
+- mesos
+- search
+- jail
+- unjail
+- job
+- unbug
+
+
+Level 3 Commands (Game Master):
+- fly
+- spawn
+- mutemap
+- checkdmg
+- inmap
+- reloadevents
+- reloaddrops
+- reloadportals
+- reloadmap
+- hpmp
+- music
+- monitor
+- monitors
+- ignore
+- ignored
+- pos
+- togglecoupon
+- chat
+- fame
+- givenx
+- givevp
+- givems
+- id
+- expeds
+- kill
+- seed
+- energy
+- maxenergy
+- killall
+- notice
+- rip
+- openportal
+- closeportal
+- pe
+- startevent
+- endevent
+- online2
+- warpsnowball
+- ban
+- unban
+- healmap
+- healperson
+- hurt
+- killmap
+- night
+- npc
+- face
+- hair
+
+
+Level 4 Commands (Chief Game Master):
+- servermessage
+- proitem
+- seteqstat
+- exprate
+- mesorate
+- droprate
+- questrate
+- itemvac
+- forcevac
+- zakum
+- horntail
+- pinkbean
+- pap
+- pianus
+- cake
+/* - playernpc*/
+
+
+Level 5 Commands (Administrator/Developer):
+- debugmonster
+- debugpacket
+- debugportal
+- debugspawnpoint
+- debugpos
+- debugmap
+- debugmobsp
+- debugevent
+- debugareas
+- debugreactors
+- debugservercoupons/debugcoupons
+- debugplayercoupons
+- debugtimer
+
+
+Level 6 Commands (Executive Officer/Information Officer):
+- setgmlevel
+- warpworld
+- saveall
+- dcall
+- mapplayers
+- getacc
+- shutdown/shutdownnow
+- clearquestcache
+- clearquest
+- fred

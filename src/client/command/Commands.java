@@ -359,13 +359,12 @@ public class Commands {
                         } else {
                             c.getPlayer().showHint("Current drop count: #r" + dropCount + "#k / #e" + ServerConstants.ITEM_LIMIT_ON_MAP + "#n", 300);
                         }
-                        
                         break;
                     
 		case "time":
 			DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 			dateFormat.setTimeZone(TimeZone.getTimeZone(ServerConstants.TIMEZONE));
-			player.yellowMessage("Solaxia Server Time: " + dateFormat.format(new Date()));
+			player.yellowMessage("UmbraMS Server Time: " + dateFormat.format(new Date()));
 			break;
                 
                 case "credits":
@@ -384,33 +383,33 @@ public class Commands {
 			break;
                     
 		case "gacha":
-			Gachapon gacha = null;
-			String search = joinStringFrom(sub, 1);
-			String gachaName = "";
-			String [] names = {"Henesys", "Ellinia", "Perion", "Kerning City", "Sleepywood", "Mushroom Shrine", "Showa Spa Male", "Showa Spa Female", "New Leaf City", "Nautilus Harbor"};
-			int [] ids = {9100100, 9100101, 9100102, 9100103, 9100104, 9100105, 9100106, 9100107, 9100109, 9100117};
-			for (int i = 0; i < names.length; i++){
-				if (search.equalsIgnoreCase(names[i])){
-					gachaName = names[i];
-					gacha = Gachapon.getByNpcId(ids[i]);
-				}
-			}
-			if (gacha == null){
-				player.yellowMessage("Please use @gacha <name> where name corresponds to one of the below:");
-				for (String name : names){
-					player.yellowMessage(name);
-				}
+                        Gachapon gacha = null;
+                        String search = joinStringFrom(sub, 1);
+                        String gachaName = "";
+                        String [] names = {"Henesys", "Ellinia", "Perion", "Kerning City", "Sleepywood", "Mushroom Shrine", "Showa Spa Male", "Showa Spa Female", "New Leaf City", "Nautilus Harbor"};
+                        int [] ids = {9100100, 9100101, 9100102, 9100103, 9100104, 9100105, 9100106, 9100107, 9100109, 9100117};
+                        for (int i = 0; i < names.length; i++){
+                                if (search.equalsIgnoreCase(names[i])){
+                                        gachaName = names[i];
+                                        gacha = Gachapon.getByNpcId(ids[i]);
+                                }
+                        }
+                        if (gacha == null){
+                                player.yellowMessage("Please use @gacha <name> where name corresponds to one of the below:");
+                                for (String name : names){
+                                        player.yellowMessage(name);
+                                }
                         break;
-			}
-			String output = "The #b" + gachaName + "#k Gachapon contains the following items.\r\n\r\n";
-			for (int i = 0; i < 2; i++){
-				for (int id : gacha.getItems(i)){
-					output += "-" + MapleItemInformationProvider.getInstance().getName(id) + "\r\n";
-				}
-			}
-			output += "\r\nPlease keep in mind that there are items that are in all gachapons and are not listed here.";
-			c.announce(MaplePacketCreator.getNPCTalk(9010000, (byte) 0, output, "00 00", (byte) 0));
-			break;
+                        }
+                        String output = "The #b" + gachaName + "#k Gachapon contains the following items.\r\n\r\n";
+                        for (int i = 0; i < 2; i++){
+                                for (int id : gacha.getItems(i)){
+                                        output += "-" + MapleItemInformationProvider.getInstance().getName(id) + "\r\n";
+                                }
+                        }
+                        output += "\r\nPlease keep in mind that there are items that are in all gachapons and are not listed here.";
+                        c.announce(MaplePacketCreator.getNPCTalk(9010000, (byte) 0, output, "00 00", (byte) 0));
+                        break;
                     
 		case "whatdropsfrom":
 			if (sub.length < 2) {
@@ -867,14 +866,6 @@ public class Commands {
 			}
                     break;
                     
-                case "buffmap":
-                        SkillFactory.getSkill(9101001).getEffect(SkillFactory.getSkill(9101001).getMaxLevel()).applyTo(player, true);
-                        SkillFactory.getSkill(9101002).getEffect(SkillFactory.getSkill(9101002).getMaxLevel()).applyTo(player, true);
-                        SkillFactory.getSkill(9101003).getEffect(SkillFactory.getSkill(9101003).getMaxLevel()).applyTo(player, true);
-                        SkillFactory.getSkill(9101008).getEffect(SkillFactory.getSkill(9101008).getMaxLevel()).applyTo(player, true);
-                        SkillFactory.getSkill(1005).getEffect(SkillFactory.getSkill(1005).getMaxLevel()).applyTo(player, true);
-                    break;
-                    
                 case "buff":
                         if (sub.length < 2){
                                 player.yellowMessage("Syntax: !buff <buffid>");
@@ -884,6 +875,14 @@ public class Commands {
                         
                         skill = SkillFactory.getSkill(skillid);
                         if(skill != null) skill.getEffect(skill.getMaxLevel()).applyTo(player);
+                    break;    
+                    
+                case "buffmap":
+                        SkillFactory.getSkill(9101001).getEffect(SkillFactory.getSkill(9101001).getMaxLevel()).applyTo(player, true);
+                        SkillFactory.getSkill(9101002).getEffect(SkillFactory.getSkill(9101002).getMaxLevel()).applyTo(player, true);
+                        SkillFactory.getSkill(9101003).getEffect(SkillFactory.getSkill(9101003).getMaxLevel()).applyTo(player, true);
+                        SkillFactory.getSkill(9101008).getEffect(SkillFactory.getSkill(9101008).getMaxLevel()).applyTo(player, true);
+                        SkillFactory.getSkill(1005).getEffect(SkillFactory.getSkill(1005).getMaxLevel()).applyTo(player, true);
                     break;
                     
                 case "bomb":
